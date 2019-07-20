@@ -21,6 +21,10 @@
 
     </target>
 
+    <target name="composer">
+        <composer command="install"/>
+    </target>
+
     <target name="clean">
         <delete dir="${build}"/>
     </target>
