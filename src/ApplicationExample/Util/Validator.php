@@ -1,14 +1,14 @@
 <?php
 
-namespace Application\Util;
+namespace ApplicationExample\Util;
 
-require_once 'Application/Persist/UserStore.php';
+require_once 'ApplicationExample/Persist/UserStore.php';
 
-use Application\Persist\UserStore;
+use ApplicationExample\Persist\UserStore;
 
 /**
  * Class Validator
- * @package Application\Util
+ * @package ApplicationExample\Util
  */
 class Validator {
     private $store;

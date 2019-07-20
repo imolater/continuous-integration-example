@@ -1,11 +1,11 @@
 <?php
 
-namespace Application\Domain;
+namespace ApplicationExample\Domain;
 
 
 /**
  * Class User
- * @package Application\Domain
+ * @package ApplicationExample\Domain
  */
 class User {
     private $name;

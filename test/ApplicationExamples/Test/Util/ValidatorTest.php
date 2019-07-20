@@ -1,10 +1,12 @@
 <?php
-require_once 'Application/Persist/UserStore.php';
-require_once 'Application/Util/Validator.php';
+namespace ApplicationExample\Test\Util;
 
-use Application\Domain\User;
-use Application\Persist\UserStore;
-use Application\Util\Validator;
+require_once 'ApplicationExample/Persist/UserStore.php';
+require_once 'ApplicationExample/Util/Validator.php';
+
+use ApplicationExample\Domain\User;
+use ApplicationExample\Persist\UserStore;
+use ApplicationExample\Util\Validator;
 use PHPUnit\Framework\TestCase;
 
 class ValidatorTest extends TestCase {
@@ -38,7 +40,7 @@ class ValidatorTest extends TestCase {
      * @throws \Exception
      */
     public function testValidateUser__WrongPass() {
-        $store = $this->createMock( 'Application\Persist\UserStore' );
+        $store = $this->createMock( 'ApplicationExample\Persist\UserStore' );
         $this->validator = new Validator($store);
 
         $store->expects( $this->once() )

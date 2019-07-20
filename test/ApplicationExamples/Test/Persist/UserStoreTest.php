@@ -1,7 +1,9 @@
 <?php
-require_once 'Application/Persist/UserStore.php';
+namespace ApplicationExample\Test\Persist;
 
-use Application\Persist\UserStore;
+require_once 'ApplicationExample/Persist/UserStore.php';
+
+use ApplicationExample\Persist\UserStore;
 use PHPUnit\Framework\TestCase;
 
 class UserStoreTest extends TestCase {

@@ -1,14 +1,14 @@
 <?php
 
-namespace Application\Persist;
+namespace ApplicationExample\Persist;
 
-require_once 'Application/Domain/User.php';
+require_once 'ApplicationExample/Domain/User.php';
 
-use Application\Domain\User;
+use ApplicationExample\Domain\User;
 
 /**
  * Class UserStore
- * @package Application\Persist
+ * @package ApplicationExample\Persist
  */
 class UserStore {
     /**

@@ -1,6 +1,7 @@
 <project name="Application" default="setup">
     <property name="build" value="./build" />
     <property name="src" value="./src" />
+    <property name="test" value="./test"/>
     <property name="version" value="1.0" />
 
     <autoloader/>
@@ -8,17 +9,15 @@
     <target name="setup" depends="clean, build, doc, report, sniffer"/>
 
     <target name="build">
-
         <mkdir dir="${build}" />
 
-        <copy todir="${build}/Application">
-            <fileset dir="${src}/Application" />
+        <copy todir="${build}/lib">
+            <fileset dir="${src}" />
         </copy>
 
-        <copy todir="${build}/Test">
-            <fileset dir="${src}/Test" />
+        <copy todir="${build}/test">
+            <fileset dir="${test}" />
         </copy>
-
     </target>
 
     <target name="clean">
@@ -26,59 +25,41 @@
     </target>
 
     <target name="doc" depends="build">
-
         <mkdir dir="${build}/docs"/>
-
         <phpdoc2 title="Application Example" destdir="${build}/docs" template="abstract">
-            <fileset dir="${src}/Application"/>
+            <fileset dir="${src}"/>
         </phpdoc2>
-
     </target>
 
     <target name="report" depends="build">
-
         <mkdir dir="${build}/reports/coverage"/>
 
         <coverage-setup database="${build}/reports/coverage.db">
-            <fileset dir="${build}/Application">
-                <include name="**/*.php"/>
-            </fileset>
+            <fileset dir="${build}/lib"/>
         </coverage-setup>
 
         <phpunit codecoverage="true">
-
             <formatter type="plain" usefile="false"/>
             <formatter type="xml" outfile="test_report.xml" todir="${build}/reports"/>
             <formatter type="clover" outfile="clover_report.xml" todir="${build}/reports"/>
-
             <batchtest classpath="${build}">
-                <fileset dir="${build}/">
-                    <include name="Test/**"/>
-                </fileset>
+                <fileset dir="${build}/test"/>
             </batchtest>
-
         </phpunit>
 
         <coverage-report outfile="${build}/reports/coverage.xml">
             <report styleDir="vendor/phing/phing/etc" toDir="${build}/reports/coverage"/>
         </coverage-report>
-
     </target>
 
     <target name="sniffer" depends="build">
-
         <mkdir dir="${build}/reports"/>
 
         <phpcodesniffer standard="Zend">
-
-            <fileset dir="${build}/Application">
-                <include name="**/*.php"/>
-            </fileset>
+            <fileset dir="${build}/lib"/>
 
             <formatter type="checkstyle" outfile="${build}/reports/checkstyle.xml"/>
-
         </phpcodesniffer>
-
     </target>
 
 </project>
