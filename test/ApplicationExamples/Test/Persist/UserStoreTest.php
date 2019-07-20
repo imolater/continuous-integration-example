@@ -53,4 +53,8 @@ class UserStoreTest extends TestCase {
             $this->assertThat($this->store->getUser('bob@example.com')->getName(), $const);
         }
     }
+
+    public function testNotifyPasswordFailure__UserNotFound() {
+        self::assertNull( $this->store->notifyPasswordFailure('bob@example.com') );
+    }
 }

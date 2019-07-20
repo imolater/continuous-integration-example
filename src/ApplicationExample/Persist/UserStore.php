@@ -25,11 +25,11 @@ class UserStore {
      * @throws \Exception
      */
     function addUser( $name, $mail, $pass ) {
-        if ( isset( $this->users[$mail] ) ) {
+        if ( isset( $this->users[ $mail ] ) ) {
             throw new \Exception( "Пользователь с email - {$mail} уже существует" );
         }
 
-        $this->users[$mail] = new User( $name, $mail, $pass );
+        $this->users[ $mail ] = new User( $name, $mail, $pass );
         return true;
     }
 
@@ -37,7 +37,7 @@ class UserStore {
      * @param $mail
      */
     function notifyPasswordFailure( $mail ) {
-        if ( !is_null( $user = $this->getUser( $mail ) ) )
+        if ( ! is_null( $user = $this->getUser( $mail ) ) )
             $user->failed( time() );
     }
 
@@ -47,6 +47,9 @@ class UserStore {
      * @return User|null
      */
     public function getUser( $mail ): ?User {
-        return $this->users[$mail];
+        if ( isset( $this->users[ $mail ] ) )
+            return $this->users[ $mail ];
+
+        return null;
     }
 }
