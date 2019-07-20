@@ -1,8 +1,8 @@
 <?php
 namespace ApplicationExample\Test\Util;
 
-require_once 'ApplicationExample/Persist/UserStore.php';
-require_once 'ApplicationExample/Util/Validator.php';
+require_once 'lib/ApplicationExample/Persist/UserStore.php';
+require_once 'lib/ApplicationExample/Util/Validator.php';
 
 use ApplicationExample\Domain\User;
 use ApplicationExample\Persist\UserStore;

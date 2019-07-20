@@ -2,7 +2,7 @@
 
 namespace ApplicationExample\Util;
 
-require_once 'ApplicationExample/Persist/UserStore.php';
+require_once 'lib/ApplicationExample/Persist/UserStore.php';
 
 use ApplicationExample\Persist\UserStore;
 

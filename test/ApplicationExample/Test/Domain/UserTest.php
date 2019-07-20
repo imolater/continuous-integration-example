@@ -2,7 +2,7 @@
 
 namespace ApplicationExample\Test\Domain;
 
-require_once 'ApplicationExample\Domain\User.php';
+require_once 'lib/ApplicationExample/Domain/User.php';
 
 use ApplicationExample\Domain\User;
 use PHPUnit\Framework\TestCase;
