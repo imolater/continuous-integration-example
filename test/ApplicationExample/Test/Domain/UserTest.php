@@ -1,6 +1,6 @@
 <?php
 
-namespace ApplicationExamples\Test\Domain;
+namespace ApplicationExample\Test\Domain;
 
 require_once 'ApplicationExample\Domain\User.php';
 
