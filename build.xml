@@ -5,7 +5,7 @@
 
     <autoloader/>
 
-    <target name="setup" depends="clean, composer, build, doc, report, sniffer"/>
+    <target name="setup" depends="clean, build, doc, report, sniffer"/>
 
     <target name="build">
 
@@ -19,10 +19,6 @@
             <fileset dir="${src}/Test" />
         </copy>
 
-    </target>
-
-    <target name="composer">
-        <composer command="install"/>
     </target>
 
     <target name="clean">
