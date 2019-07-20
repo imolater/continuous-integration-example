@@ -27,6 +27,8 @@ class Validator {
      * @return bool
      */
     function validateUser( $mail, $pass ) {
+        return false;
+
         $user = $this->store->getUser( $mail );
 
         if ( is_null( $user ) ) {
